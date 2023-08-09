@@ -41,6 +41,63 @@ header{
     aspect-ratio: 1/1.5;
     border: 1px solid black;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 0.5s;
+    font-size: 56px;
+}
+
+.completed{
+    opacity: 0.5;
+    position: relative;
+}
+
+.completed::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(88, 88, 88, 0.455);
+    pointer-events: none;
+    opacity: 0.5;
+}
+.booktitle{
+    font-weight: bold;
+    height: 35%;
+    width: 100%;
+    margin:10px 0;
+    padding: 0 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+.bookAuthor{
+    font-style: italic;
+    font-size: 1.00rem;
+    margin: 5px 0;
+}
+.bookPages{
+    font-size: 1.00rem;
+    margin: 5px 0;
+}
+.cardButtonContainer{
+    margin-top: auto;
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.cardButtonContainer > * {
+    width: 13ch;
+    height: 25px;
+    font-size: .80rem;
 }
 
 #bookForm{
@@ -57,13 +114,18 @@ header{
     justify-content: center;
     align-items: center;
     background-color: cornflowerblue;
-    /* display: none; */
+}
+
+.hideForm{
+    display: none !important;
+
 }
 
 #bookForm > legend{
     font-size: 25px;
     font-weight: bold;
     height: max-content;
+    padding-bottom: 10px;
 }
 
 .bookContainer{
@@ -74,9 +136,19 @@ header{
     flex: 1;
     align-content: center;
 }
+
+.buttonContainer{
+    height: 35px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .bookContainer > label{
     grid-column: 1 / 2;
 }
 .bookContainer > input{
     grid-column: 2 / 3;
 }
+
